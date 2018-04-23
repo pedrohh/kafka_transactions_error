@@ -1,0 +1,12 @@
+server:
+  port: 8010
+
+#Active environment
+spring:
+  application:
+    name: service-user
+
+---
+#Kafka configuration
+kafka:
+  bootstrap: http://localhost:9092
