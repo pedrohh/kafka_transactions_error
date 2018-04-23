@@ -5,6 +5,7 @@ import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.retry.annotation.Backoff
 import org.springframework.retry.annotation.Retryable
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class UserService {
@@ -12,6 +13,7 @@ class UserService {
     @Autowired
     private lateinit var kafka: KafkaTemplate<String, String>
 
+    @Transactional
     @Retryable(maxAttempts = 10, backoff = Backoff(5000))
     fun kafka(user: String) {
 
