@@ -53,4 +53,7 @@ dependencies {
     //Spring libs
     compile "org.springframework.kafka:spring-kafka:2.1.5.RELEASE"
 
+    compile "org.springframework.retry:spring-retry:1.2.2.RELEASE"
+
+    compile "org.springframework.boot:spring-boot-starter-aop:$springBootVersion"
 }
