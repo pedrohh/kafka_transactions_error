@@ -15,7 +15,7 @@ class UserController {
     @RequestMapping(value = ["/user"], method = [RequestMethod.POST])
     fun user(@RequestBody user: String): String {
 
-        kafka.send("user_updated", user)
+        kafka.send("user_updated", user).get()
 
         return user
     }
